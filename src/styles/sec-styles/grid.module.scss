@@ -137,3 +137,11 @@
     }
   }
 }
+
+@media only screen and (max-width: 360px) {
+  .gridHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

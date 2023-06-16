@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 
 const useAxios = (url) => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
 

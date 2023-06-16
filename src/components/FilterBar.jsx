@@ -17,9 +17,10 @@ const FilterBar = () => {
   return (
     <div className="section">
       <ul className={styles.filterBar}>
-        {routes?.map((item) => {
+        {/* {routes?.map((item) => {
           return <li key={item.id} className={styles.link}>{item.name}</li>;
-        })}
+        })} */}
+        Shop & Trade At Your Own Risk
       </ul>
     </div>
   );
