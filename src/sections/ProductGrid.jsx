@@ -41,7 +41,7 @@ const ProductGrid = () => {
               <div className={styles.card} key={value.id}>
                 <div className={styles.actionBox}>
                   <AddBoxIcon sx={{ fontSize: 30, color: "red" }} />
-                  <Link to={value.link}>
+                  <Link to={`product/${value.id}`}>
                     <VisibilityIcon sx={{ fontSize: 30, color: "black" }} />
                   </Link>
                 </div>
