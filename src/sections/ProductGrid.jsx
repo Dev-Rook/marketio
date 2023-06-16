@@ -33,7 +33,7 @@ const ProductGrid = () => {
       <div className={styles.gridHeader}>
         <p className={"sectionTitle"}>Current Marketplace</p>
 
-        <Input setSearch={setSearch} />
+        <Input setSearch={setSearch} search={search} />
       </div>
       <div className={styles.contentCotainer}>
         {filteredData.length > 0 ? (
@@ -61,7 +61,7 @@ const ProductGrid = () => {
             })}
           </>
         ) : (
-          <p>No Such item Exists</p>
+          <p>No Such item: {search} Exists</p>
         )}
       </div>
 
