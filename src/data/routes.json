@@ -1,22 +1,22 @@
 [
     {
         "id": 1,
-        "name": "Category",
+        "name": "All",
         "route": ""
     },
     {
         "id": 2,
-        "name": "Category",
+        "name": "Electronics",
         "route": ""
     },
     {
         "id": 3,
-        "name": "Category",
+        "name": "Clothes",
         "route": ""
     },
     {
         "id": 4,
-        "name": "Category",
+        "name": "Other",
         "route": ""
     }
 ]

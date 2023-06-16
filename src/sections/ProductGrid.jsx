@@ -8,6 +8,8 @@ import styles from "../styles/sec-styles/grid.module.scss";
 
 // Material UI Imports:
 import StartIcon from "@mui/icons-material/Start";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import AddBoxIcon from "@mui/icons-material/AddBox";
 
 // Componet Import:
 import Input from "../components/Input";
@@ -36,18 +38,22 @@ const ProductGrid = () => {
           .slice(0, 10)
           .map((value) => {
             return (
-              <Link to={value.link} key={value.id}>
-                <div className={styles.card}>
-                  <div className={styles.imgContainer}>
-                    <img
-                      src={value.image}
-                      alt="Under Development"
-                      className={styles.img}
-                    />
-                  </div>
-                  <p className={styles.text}>{value.title.slice(0, 30)}</p>
+              <div className={styles.card} key={value.id}>
+                <div className={styles.actionBox}>
+                  <AddBoxIcon sx={{ fontSize: 30, color: "red" }} />
+                  <Link to={value.link}>
+                    <VisibilityIcon sx={{ fontSize: 30, color: "black" }} />
+                  </Link>
                 </div>
-              </Link>
+                <div className={styles.imgContainer}>
+                  <img
+                    src={value.image}
+                    alt="Under Development"
+                    className={styles.img}
+                  />
+                </div>
+                <p className={styles.text}>{value.title.slice(0, 30)}</p>
+              </div>
             );
           })}
       </div>
