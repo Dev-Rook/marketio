@@ -1,0 +1,100 @@
+.contentContainer {
+  display: flex;
+
+  gap: 10px;
+  margin-top: 70px;
+
+  justify-content: space-evenly;
+  align-items: center;
+
+  height: fit-content;
+  width: 1200px;
+
+  //   border: 1px solid red;
+
+  .billboard {
+    display: flex;
+
+    position: relative;
+    transition: .5s;
+
+    height: 305px;
+    width: 70%;
+
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+
+  .heroGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 5px;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    // height: 400px;
+    width: 30%;
+
+    // border: 1px solid white;
+
+    .gridBox {
+      display: flex;
+
+      margin: auto;
+      transition: .5s;
+
+      height: 150px;
+      width: 100%;
+
+      border: 1px solid white;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .contentContainer {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1037px) {
+  .contentContainer {
+    flex-direction: column;
+
+    .billboard {
+      width: 100%;
+    }
+
+    .heroGrid {
+      width: 100%;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .contentContainer {
+    .heroGrid {
+      width: 100%;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      .gridBox {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 315px) {
+  .contentContainer {
+    .heroGrid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      .gridBox {
+        height: 100px;
+        width: 100%;
+      }
+    }
+  }
+}

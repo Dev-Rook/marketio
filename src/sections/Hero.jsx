@@ -15,9 +15,13 @@ import gridData from "../data/heroGrid.json";
 const Hero = () => {
   const [heroGrid, setHeroGrid] = useState(gridData);
   return (
-    <div className="section">
+    // <div className="section">
       <div className={styles.contentContainer}>
-        <div className={styles.billboard}></div>
+        <div className={styles.billboard}>
+          <img src="" alt="" className={styles.poster} />
+          {/* <video src="" className={styles.poster}></video> */}
+          <div className={styles.textBox}></div>
+        </div>
         <div className={styles.heroGrid}>
           {heroGrid?.map((item) => {
             return (
@@ -28,7 +32,7 @@ const Hero = () => {
           })}
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 
