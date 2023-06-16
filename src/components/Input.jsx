@@ -11,7 +11,7 @@ const Input = ({ setSearch }) => {
         <input
           type="text"
           className={styles.input}
-          placeholder="Search via first name"
+          placeholder="Search via name or type"
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
