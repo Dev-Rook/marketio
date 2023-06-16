@@ -6,7 +6,7 @@
   align-items: center;
 
   padding: 5px;
-  gap: 30px;
+  gap: 20px;
 
   height: 100%;
   width: 100%;
@@ -19,8 +19,56 @@
   justify-content: center;
   align-items: center;
 
+  gap: 10px;
+
   height: fit-content;
   width: 1200px;
+
+  .sectionTitle {
+    align-self: flex-start;
+
+    font-size: 30px;
+    font-weight: 300;
+  }
+}
+
+.CallToActionBox {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  align-self: flex-start;
+
+  gap: 10px;
+  padding: 0px;
+
+  height: fit-content;
+  width: fit-content;
+
+  .Button {
+    font-size: 16px;
+    font-weight: 400;
+
+    display: flex;
+    align-self: flex-start;
+
+    padding: 5px 20px;
+    margin-left: 0px;
+
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: #202023;
+    backdrop-filter: blur(5px);
+
+    color: white;
+  }
+
+  .Button:is(:hover) {
+    transform: scale(0.9);
+  }
 }
 
 @media only screen and (max-width: 1200px) {
