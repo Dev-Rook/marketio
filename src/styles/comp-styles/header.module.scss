@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 8px;
+  margin: auto;
+
+  height: fit-content;
+  width: 1200px;
+
+  border: 1px solid white;
+
+  .left {
+    .logo {
+        height: 40px;
+    }
+  }
+
+  .right {
+    display: flex;
+
+    gap: 10px;
+
+    .profileBtn {
+      display: flex;
+
+      height: 35px;
+      width: 35px;
+
+      border: 1px solid white;
+      border-radius: 50%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+    .header {
+      width: 100%;
+    }
+  }
+  
