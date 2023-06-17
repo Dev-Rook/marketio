@@ -40,13 +40,19 @@ const ProductGrid = () => {
     borderColor: "red",
   };
 
+  const placeholder = "Search marketplace...";
+
   return (
     <div className={"section"} id="">
       <div className={styles.gridHeader}>
         <p className={"sectionTitle"}>Current Marketplace</p>
-
-        <Input setSearch={setSearch} search={search} />
+        <Input
+          setSearch={setSearch}
+          search={search}
+          placeholder={placeholder}
+        />
       </div>
+
       {filteredData.length > 0 ? (
         <div className={styles.contentCotainer}>
           <>
@@ -68,7 +74,7 @@ const ProductGrid = () => {
                     <div className={styles.card} key={value.id}>
                       <div className={styles.actionBox}>
                         <AddBoxIcon sx={{ fontSize: 30, color: "red" }} />
-                        <Link to={`product/${value.id}`}>
+                        <Link to={`/product/${value.id}`}>
                           <VisibilityIcon
                             sx={{ fontSize: 30, color: "black" }}
                           />

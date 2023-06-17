@@ -1,9 +1,20 @@
-import React from 'react'
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const ProfileBanner = () => {
+// Styles Import:
+import "../styles/global.scss";
+import styles from "../styles/comp-styles/profileBanner.module.scss";
+
+const ProfileBanner = ({ details }) => {
   return (
-    <div>ProfileBanner</div>
-  )
-}
+    <div className={styles.banner}>
+      <div className={styles.pfpContainer}>
+        <img src={""} alt="" className={styles.pfp} />
+      </div>
 
-export default ProfileBanner
+      <p className={styles.name}>Username</p>
+    </div>
+  );
+};
+
+export default ProfileBanner;
