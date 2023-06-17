@@ -1,0 +1,29 @@
+.label {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 200px;
+  width: 100%;
+
+  border: 1px solid white;
+
+  .textBox {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+  
+    height: fit-content;
+    width: fit-content;
+  
+    .mainText {
+        text-align: center;
+        span {
+            color: red;
+        }
+    }
+  }
+}

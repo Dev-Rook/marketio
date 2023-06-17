@@ -5,10 +5,17 @@ import { Link } from "react-router-dom";
 import "../styles/global.scss";
 import styles from "../styles/comp-styles/doesntExist.module.scss";
 
-const DoesntExist = () => {
+const DoesntExist = ({ search }) => {
   return (
-    <div className={styles.label}>DoesntExist</div>
-  )
-}
+    <div className={styles.label}>
+      <div className={styles.textBox}>
+        <h1>Error 204</h1>
+        <h2 className={styles.mainText}>
+          This Item: <span>&ldquo;{search}&rdquo;</span> | Does Not Exist
+        </h2>
+      </div>
+    </div>
+  );
+};
 
-export default DoesntExist
+export default DoesntExist;

@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
+// Hooks Imports:
 import useAxios from "../hooks/useAxios";
-import useFirebase from "../hooks/useFirebase";
+// import useFirebase from "../hooks/useFirebase";
 
 // Styles Import:
 import "../styles/global.scss";
@@ -12,8 +14,12 @@ import StartIcon from "@mui/icons-material/Start";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 
+// Loaders Import:
+import ScaleLoader from "react-spinners/ScaleLoader";
+
 // Componet Import:
 import Input from "../components/Input";
+import DoesntExist from "../components/DoesntExist";
 
 const ProductGrid = () => {
   const url = `https://fakestoreapi.com/products`;
@@ -28,6 +34,12 @@ const ProductGrid = () => {
       item.description.toLowerCase().includes(search.toLowerCase())
   );
 
+  const override = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "red",
+  };
+
   return (
     <div className={"section"} id="">
       <div className={styles.gridHeader}>
@@ -35,35 +47,52 @@ const ProductGrid = () => {
 
         <Input setSearch={setSearch} search={search} />
       </div>
-      <div className={styles.contentCotainer}>
-        {filteredData.length > 0 ? (
+      {filteredData.length > 0 ? (
+        <div className={styles.contentCotainer}>
           <>
             {filteredData?.slice(0, 10).map((value) => {
               return (
-                <div className={styles.card} key={value.id}>
-                  <div className={styles.actionBox}>
-                    <AddBoxIcon sx={{ fontSize: 30, color: "red" }} />
-                    <Link to={`product/${value.id}`}>
-                      <VisibilityIcon sx={{ fontSize: 30, color: "black" }} />
-                    </Link>
-                  </div>
-                  <div className={styles.imgContainer}>
-                    <img
-                      src={value.image}
-                      alt="Under Development"
-                      className={styles.img}
+                <>
+                  {loading ? (
+                    <ScaleLoader
+                      color={"red"}
+                      loading={loading}
+                      cssOverride={override}
+                      size={80}
+                      aria-label="Loading Spinner"
+                      data-testid="loader"
                     />
-                  </div>
-                  <p className={styles.text}>{value.title.slice(0, 30)}</p>
-                  <p className={styles.text}>${value.price}</p>
-                </div>
+                  ) : error ? (
+                    <p>{error}</p>
+                  ) : (
+                    <div className={styles.card} key={value.id}>
+                      <div className={styles.actionBox}>
+                        <AddBoxIcon sx={{ fontSize: 30, color: "red" }} />
+                        <Link to={`product/${value.id}`}>
+                          <VisibilityIcon
+                            sx={{ fontSize: 30, color: "black" }}
+                          />
+                        </Link>
+                      </div>
+                      <div className={styles.imgContainer}>
+                        <img
+                          src={value.image}
+                          alt="Under Development"
+                          className={styles.img}
+                        />
+                      </div>
+                      <p className={styles.text}>{value.title.slice(0, 30)}</p>
+                      <p className={styles.text}>${value.price}</p>
+                    </div>
+                  )}
+                </>
               );
             })}
           </>
-        ) : (
-          <p>No Such item: {search} Exists</p>
-        )}
-      </div>
+        </div>
+      ) : (
+        <>{!loading && <DoesntExist search={search} />}</>
+      )}
 
       <div className={"CallToActionBox"}>
         <Link to={"/posts"}>

@@ -24,9 +24,11 @@ const Header = () => {
       </div>
       <div className={styles.right}>
         <LocalMallIcon sx={{ fontSize: 35 }} />
-        <div className={styles.profileBtn}>
-          <img src="" alt="" className={styles.profileImg} />
-        </div>
+        <Link to={"/profile"}>
+          <div className={styles.profileBtn}>
+            <img src="" alt="" className={styles.profileImg} />
+          </div>
+        </Link>
       </div>
     </nav>
   );
