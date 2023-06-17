@@ -1,13 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import axios from "axios";
 
 // Styles ImportL:
 import "../styles/global.scss";
 import styles from "../styles/sec-styles/productContainer.module.scss";
 
-// Material UI Imports:
-import CloseIcon from "@mui/icons-material/Close";
+import BackBtn from "../components/BackBtn";
 
 const Product = () => {
   const { id } = useParams();
@@ -31,11 +30,7 @@ const Product = () => {
   return (
     <div className="utilityPage">
       <div className="utilitySection">
-        <CloseIcon
-          sx={{ fontSize: 35, color: "red" }}
-          className={styles.backIcon}
-        />
-
+        <BackBtn />
         <div className={styles.ProductContainer}>
           <div className={styles.imgContainer}>
             <img src={details.image} alt="" className={styles.img} />
@@ -48,11 +43,17 @@ const Product = () => {
             <button className={styles.cartBtn}>Add To Cart</button>
 
             <div className={styles.aquireBox}>
-            <p className={styles.text}>Phone: 1 (795)-643-0011 </p>
-            <p className={styles.text}>Email: person@email.com</p>
-            <p className={styles.text}>Location: Click Icon for Google Maps - 📌</p>
-              {details?.phone ? <p className={styles.text}>Phone: {details?.phone} </p> : null}
-              {details?.email ? <p className={styles.text}>Email: {details?.email} </p> : null}
+              <p className={styles.text}>Phone: 1 (795)-643-0011 </p>
+              <p className={styles.text}>Email: person@email.com</p>
+              <p className={styles.text}>
+                Location: Click Icon for Google Maps - 📌
+              </p>
+              {details?.phone ? (
+                <p className={styles.text}>Phone: {details?.phone} </p>
+              ) : null}
+              {details?.email ? (
+                <p className={styles.text}>Email: {details?.email} </p>
+              ) : null}
               {details?.location ? (
                 <p className={styles.text}>Location: {details?.location} </p>
               ) : null}

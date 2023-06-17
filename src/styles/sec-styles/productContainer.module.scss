@@ -1,13 +1,3 @@
-.backIcon {
-  display: flex;
-  align-self: flex-start;
-  margin-left: 0px;
-  cursor: pointer;
-  transition: 0.5s;
-}
-.backIcon:is(:hover) {
-  transform: scale(1.1);
-}
 .ProductContainer {
   display: flex;
 
