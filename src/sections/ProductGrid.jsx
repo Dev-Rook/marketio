@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // Hooks Imports:
@@ -21,22 +21,11 @@ import ScaleLoader from "react-spinners/ScaleLoader";
 import Input from "../components/Input";
 import DoesntExist from "../components/DoesntExist";
 
-const ProductGrid = (splice_val) => {
+const ProductGrid = () => {
   const url = `https://fakestoreapi.com/products`;
   // const url = `https://dummyjson.com/products`;
   const { data, loading, error } = useAxios(url);
   const [search, setSearch] = useState("");
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const filteredData = data.filter(
     (item) =>
