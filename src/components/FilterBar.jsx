@@ -12,7 +12,7 @@ import styles from "../styles/comp-styles/filterBar.module.scss";
 // Json Import:
 import routeData from "../data/routes.json";
 
-const FilterBar = () => {
+const FilterBar = ({text}) => {
   const [routes, setRoutes] = useState(routeData);
   return (
     <div className="section">
@@ -20,7 +20,7 @@ const FilterBar = () => {
         {/* {routes?.map((item) => {
           return <li key={item.id} className={styles.link}>{item.name}</li>;
         })} */}
-        Shop & Trade At Your Own Risk
+        {text}
       </ul>
     </div>
   );

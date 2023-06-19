@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Index from "./routes/Index";
 import Profile from "./routes/Profile";
 import Cart from "./routes/Cart";
+import CreateItem from "./routes/CreateItem";
 
 // Dynamic Routes Import:
 import Product from "./dynamic-routes/Product";
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" element={<Index />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/createItem" element={<CreateItem />} />
 
         <Route path="/product/:id" element={<Product />} />
       </Routes>

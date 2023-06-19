@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // Hooks Imports:
@@ -21,23 +21,12 @@ import ScaleLoader from "react-spinners/ScaleLoader";
 import Input from "../components/Input";
 import DoesntExist from "../components/DoesntExist";
 
-const ProductGrid = (splice_val) => {
+const ServiceGrid = () => {
   const url = `https://fakestoreapi.com/products`;
   // const url = `https://dummyjson.com/products`;
   const { data, loading, error } = useAxios(url);
+
   const [search, setSearch] = useState("");
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   const filteredData = data.filter(
     (item) =>
       item.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -55,7 +44,7 @@ const ProductGrid = (splice_val) => {
   return (
     <div className={"section"} id="">
       <div className={styles.gridHeader}>
-        <p className={"sectionTitle"}>Current Marketplace</p>
+        <p className={"sectionTitle"}>Service Market</p>
         <Input
           setSearch={setSearch}
           search={search}
@@ -120,15 +109,4 @@ const ProductGrid = (splice_val) => {
   );
 };
 
-export default ProductGrid;
-
-// : (
-//   <p>No Such item Exists</p>
-// )
-
-// .filter((item) => {
-//   return search.toLowerCase() === ""
-//    // ? item
-//     : item.title.toLowerCase().includes(search) ||
-//         item.description.toLowerCase().includes(search);
-// })
+export default ServiceGrid;

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "New"
+    },
+    {
+        "id": 2,
+        "name": "Good As New"
+    },
+    {
+        "id": 3,
+        "name": "Used"
+    },
+    {
+        "id": 4,
+        "name": "Old"
+    },
+    {
+        "id": 5,
+        "name": "Antique"
+    },
+    {
+        "id": 6,
+        "name": "Damaged"
+    }
+]
