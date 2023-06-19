@@ -44,7 +44,7 @@ const ProductGrid = () => {
   return (
     <div className={"section"} id="">
       <div className={styles.gridHeader}>
-        <p className={"sectionTitle"}>Current Marketplace</p>
+        <p className={"sectionTitle"}>Item Marketplace</p>
         <Input
           setSearch={setSearch}
           search={search}
