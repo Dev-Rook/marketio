@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "type": "Electronics"
+    },
+    {
+        "id": 2,
+        "type": "Clothing"
+    },
+    {
+        "id": 3,
+        "type": "Jewelery"
+    },
+    {
+        "id": 4,
+        "type": "Auto Parts"
+    },
+    {
+        "id": 5,
+        "type": "Vehicles"
+    },
+    {
+        "id": 6,
+        "type": "Furniture"
+    },
+    {
+        "id": 7,
+        "type": "Appliances"
+    },
+    {
+        "id": 8,
+        "type": "Antiques"
+    }
+]
