@@ -6,10 +6,8 @@ import ItemForm from "../components/ItemForm";
 
 const CreateItem = () => {
   return (
-    <div className="utilityPage">
-      <div className="utilitySection">
-        <ItemForm />
-      </div>
+    <div className="page">
+      <ItemForm />
     </div>
   );
 };

@@ -20,7 +20,7 @@ const Index = () => {
       <ProductGrid />
       <Other />
       <FilterBar text={Fb_text2} />
-      <ServiceGrid />
+      {/* <ServiceGrid /> */}
     </div>
   );
 };
