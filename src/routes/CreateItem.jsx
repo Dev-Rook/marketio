@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // Styles ImportL:
 import "../styles/global.scss";
 
@@ -6,12 +8,20 @@ import { ItemCreationContext } from "../context/ItemCreationContext.js";
 
 // Components Import:
 import ItemForm from "../components/ItemForm";
+import ServiceForm from "../components/ServiceForm";
 
 const CreateItem = () => {
+  const [formType, setFormType] = useState(true);
+
+  const toggleFormType = () => {
+    setFormType(prev => !prev);
+  };
+
   return (
     <div className="page">
+      <button style={{marginTop: "100px"}} onClick={toggleFormType}>Form Type</button>
       <ItemCreationContext.Provider value={""}>
-        <ItemForm />
+        {formType ? <ItemForm /> : <ServiceForm />}
       </ItemCreationContext.Provider>
     </div>
   );

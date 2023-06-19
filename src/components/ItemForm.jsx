@@ -167,7 +167,7 @@ const ItemForm = () => {
           <p className={styles.finePrint}>
             You can copy coordinate & or paste a location link from google maps.
             If you would like to stay out of the handover ordeal, if a when a
-            buy shows interest in what you are selling, as for a mailing address
+            buy shows interest in what you are selling, ask for a mailing address
             or P.O box to ship item.
           </p>
         </div>
