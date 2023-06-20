@@ -1,29 +1,28 @@
 import { useState } from "react";
 
+import { useContext } from "react";
+import { ItemCreationContext } from "../context/ItemCreationContext";
+
 // Styles Import:
 // import "../styles/imp-styles/selection.css";
-import styles from "../styles/comp-styles/selctor.module.scss";
-
-// Json Import:
-import conditionData from "../data/condition.json";
+import styles from "../styles/comp-styles/itemForm.module.scss";
 
 const ConditionSelector = () => {
-  const [data, setData] = useState(conditionData);
-  const [condition, setCondition] = useState(conditionData.name);
-  console.log(condition)
-
+  const { condition, setConditionSelect } = useContext(ItemCreationContext);
   return (
-    <select name="Condition Select" id="" className={styles.select}>
-      <optgroup label="Select Item Conditon">
-        {data?.map((item) => {
-          return (
-            <option value="" key={item.id} className={styles.option} onChange={(e) => {setCondition(e.target.value)}}>
-              {item.name}
-            </option>
-          );
-        })}
-      </optgroup>
-    </select>
+    <optgroup label="Select Item Conditon">
+      {condition?.map((item) => {
+        return (
+          <option
+            value=""
+            key={item.id}
+            className={styles.option}
+          >
+            {item.name}
+          </option>
+        );
+      })}
+    </optgroup>
   );
 };
 

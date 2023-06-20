@@ -4,12 +4,12 @@ import { useState, useEffect, useCallback } from "react";
 import { db } from "../firebase/config";
 import { collection, getDocs } from "firebase/firestore";
 
-const useFirebase = () => {
+const useFirebase = (table) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
 
-  const dataRef = collection(db, `projects`);
+  const dataRef = collection(db, `${table}`);
 
   const getData = useCallback(async () => {
     setLoading(true);
